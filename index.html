@@ -15,29 +15,38 @@
     }
 
     body {
-      background: #f4f4f4;
+      background: #f5f7fa;
       color: #333;
       line-height: 1.6;
+      font-size: 16px;
     }
 
     header {
       background: #222;
       color: white;
-      padding: 1rem 2rem;
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header strong {
+      font-size: 1.5rem;
+      color: #ff7f50;
+      letter-spacing: 1px;
     }
 
     nav a {
       color: white;
-      margin-left: 1.5rem;
+      margin-left: 2rem;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
+      text-transform: uppercase;
     }
 
     nav a:hover {
@@ -47,30 +56,33 @@
     .hero {
       background: linear-gradient(120deg, #4b6cb7, #182848);
       color: white;
-      padding: 6rem 2rem;
+      padding: 8rem 2rem;
       text-align: center;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 4rem;
+      font-weight: 700;
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin-top: 1rem;
+      font-weight: 400;
     }
 
     section {
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
       max-width: 1100px;
       margin: auto;
     }
 
     h2 {
       color: #444;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
+      font-weight: 700;
     }
 
     .grid {
@@ -79,42 +91,51 @@
     }
 
     .skills, .projects, .certificates, .internships {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     .card {
       background: white;
-      padding: 1.5rem;
+      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
       text-align: center;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
     .card img {
-      height: 50px;
-      margin-bottom: 10px;
+      width: 120px;  /* Increased size */
+      height: 120px; /* Height to match the width */
+      margin-bottom: 20px;
       display: block;
       margin-left: auto;
       margin-right: auto;
+      object-fit: contain;
     }
 
     .card h3 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       color: #333;
+      font-size: 1.4rem;
+      font-weight: 600;
     }
 
     .card p {
-      font-size: 0.95rem;
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
     }
 
     a {
       color: #0077cc;
       text-decoration: none;
+      font-weight: 600;
     }
 
     a:hover {
@@ -125,14 +146,60 @@
       background: #222;
       color: white;
       text-align: center;
-      padding: 2rem;
-      margin-top: 2rem;
+      padding: 3rem 2rem;
+      margin-top: 3rem;
+      font-size: 1rem;
+    }
+
+    footer a {
+      color: #ff7f50;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 1rem;
     }
 
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
+      .hero p {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Increased size of the certificate images */
+    .certificates .card img {
+      width: 250px;  /* Increased size */
+      height: 250px; /* Height to match the width */
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    /* Adjust grid layout for better spacing */
+    .certificates {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Adjusted grid to fit larger images */
+    }
+
+    /* Increase project and internship images as well */
+    .projects .card img, .internships .card img {
+      width: 180px; /* Increased size */
+      height: 180px; /* Height to match the width */
     }
   </style>
 </head>
@@ -152,33 +219,37 @@
 
   <div class="hero">
     <h1>Hello, I'm Sonam Kendre</h1>
-    <p>Tech Enthusiast | Java Backend Developer | Web Developer</p>
+    <p>Civil Engineer | Revit software specializer | AutoCad Expert</p>
+    <img src="tool/WhatsApp Image 2025-05-10 at 12.33.47_4f030696.jpg" alt="Sonam Kendre" />
   </div>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      I am a final year B.Tech Computer Engineering student with a strong passion for software development and problem-solving. With a solid background in Java, Spring Boot, and Web Technologies, I'm actively seeking opportunities to grow in the tech industry.
-    </p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 3rem;">
+      <img src="tool/WhatsApp Image 2025-05-10 at 12.33.47_4f030696.jpg" alt="Sonam Kendre" style="width: 250px; height: 250px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+      <p style="max-width: 650px; font-size: 1.1rem; line-height: 1.8;">
+        I am a final-year B.Tech Civil Engineering student with a strong passion for software development and problem-solving. With a solid background in Java, Spring Boot, and Web Technologies, I'm actively seeking opportunities to grow in the tech industry. I enjoy turning complex problems into elegant and efficient solutions while continuously learning and improving my skills.
+      </p>
+    </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <div class="grid skills">
       <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/AutoCAD_logo.svg/1200px-AutoCAD_logo.svg.png" alt="AutoCAD Logo">
+        <img src="tool/WhatsApp Image 2025-05-10 at 12.29.35_18b3a0e6.jpg" alt="AutoCAD Logo">
         <div>AutoCAD</div>
       </div>
       <div class="card">
-        <img src="https://seeklogo.com/images/R/revit-logo-B43E2B2262-seeklogo.com.png" alt="Revit Logo">
+        <img src="tool/R.jpg" alt="Revit Logo">
         <div>Revit</div>
       </div>
       <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Fusion_360_logo_icon.png" alt="Fusion 360 Logo">
+        <img src="tool/FU.jpg" alt="Fusion 360 Logo">
         <div>Fusion 360</div>
       </div>
       <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/CSI_ETABS_logo.png" alt="Etabs Logo">
+        <img src="tool/ET.jpg" alt="Etabs Logo">
         <div>Etabs</div>
       </div>
       <div class="card">
@@ -186,11 +257,11 @@
         <div>Matlab</div>
       </div>
       <div class="card">
-        <img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1553193712/autodesk-green-building-studio.png" alt="GreenBuilding Studio Logo">
+        <img src="tool/AD.jpg" alt="GreenBuilding Studio Logo">
         <div>GreenBuilding Studio</div>
       </div>
       <div class="card">
-        <img src="https://www.bentley.com/wp-content/uploads/2022/09/bentley-openroads-designer-16x9.png" alt="OpenRoad Designer Logo">
+        <img src="tool/WhatsApp Image 2025-05-10 at 12.29.36_8e3cc571.jpg" alt="OpenRoad Designer Logo">
         <div>OpenRoad Designer</div>
       </div>
     </div>
@@ -200,16 +271,22 @@
     <h2>Projects</h2>
     <div class="grid projects">
       <div class="card">
-        <h3>Plant Disease Detection</h3>
-        <p>AI-powered system that identifies plant diseases from leaf images, recommends solutions and tracks user history.</p>
+        <img src="projects/a.jpg" alt="Water Purification Project">
+        <h3>Study of Surface Water and Ground Water Using Biocoagulants</h3>
+        <p>It shows the process from polluted water to clean water using eco-friendly natural agents like moringa seeds.</p>
+        <h5>Guided by: Mrs. Swapnali Mohol</h5>
       </div>
       <div class="card">
-        <h3>CoolieCart App</h3>
-        <p>App to pre-book coolies at railway stations. Inspired by Ola/Uber, focused on convenience for seniors and families.</p>
+        <img src="projects/b.jpg" alt="Ferrocement Project">
+        <h3>Experimental Investigation on Response and Failure Modes of Ferrocement-Light Gauge Steel</h3>
+        <p>Creating lightweight, efficient structural designs while managing costs and future loads for building extensions using ferrocement and LGS.</p>
+        <h5>Guided by: Mr. Sitaram Suryawanshi</h5>
       </div>
       <div class="card">
-        <h3>Scholarship Portal</h3>
-        <p>One-stop portal listing all scholarships, featuring blog writing, feedback, and categorized schemes.</p>
+        <img src="projects/c.jpg" alt="BIM Sustainability Project">
+        <h3>BIM Driven Sustainability: A Case Study Using Autodesk Revit</h3>
+        <p>Developed a Revit-based model to demonstrate sustainable design principles and optimize performance.</p>
+        <h5>Guided by: Dr. Shalaka Hire</h5>
       </div>
     </div>
   </section>
@@ -218,40 +295,66 @@
     <h2>Internships</h2>
     <div class="grid internships">
       <div class="card">
-        <h3>CodeClause</h3>
-        <p>Java Developer Intern. Built mini-projects including Login Form and ATM Interface using Core Java and OOPs.</p>
+        <img src="certificate/sonam.jpg" alt="CodeClause Logo">
+        <h3>Site Work - UND INFRA PVT LTD LATUR</h3>
+        <p>(June-July 2024) Trainee engineer, practical learning, on-site training to learn various aspects of building constructions.</p>
+        <h5>Guided By: Mr.Sitaram Suryawanshi</h5>
       </div>
       <div class="card">
-        <h3>CodSoft</h3>
-        <p>Web Development Intern. Developed projects like Portfolio, Calculator, and Landing Pages using HTML, CSS, JS.</p>
+        <img src="certificate/WhatsApp Image 2025-05-10 at 13.00.40_bae078ca.jpg" alt="Skill India Logo">
+        <h3>Construction Management (Digital Construction)</h3>
+        <p>(May 2024) Gained practical exposure to digital tools for construction management, with a focus on BIM and project management.</p>
+        <h5>Guided by: Mrs.Swapnali Mohol</h5>
       </div>
     </div>
   </section>
 
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <div class="grid certificates">
-      <div class="card">Java Programming – Infosys Springboard</div>
-      <div class="card">SQL – Oracle Academy</div>
-      <div class="card">Full Stack Web Dev – Udemy</div>
-      <div class="card">OOPs with Java – CodSoft</div>
+  
+<section id="certificates">
+  <h2>Certificates</h2>
+  <div class="grid certificates">
+    <div class="card">
+      <img src="certificate/a.jpg" alt="Certificate Image 1">
+     
     </div>
-  </section>
+    <div class="card">
+      <img src="certificate/b.jpg" alt="Certificate Image 2">
+           </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="text-align:center;">
-      📧 Email: <a href="mailto:sonamkendre510@gmail.com">sonamkendre510@gmail.com</a><br/>
-      📱 Phone: +91 8087973190<br/>
-      🌐 LinkedIn: <a href="https://www.linkedin.com/in/sonam-kendre-97627a282/" target="_blank">Sonam Kendre</a><br/>
-      💼 GitHub: <a href="https://github.com/Sonam510" target="_blank">github.com/Sonam510</a>
-    </p>
-  </section>
+
+           <div class="card">
+            <img src="certificate/c.jpg" alt="Certificate Image 2">
+                 </div>
+
+                 <div class="card">
+                  <img src="certificate/d.jpg" alt="Certificate Image 2">
+                       </div>
+
+                       <div class="card">
+                        <img src="certificate/f.jpg" alt="Certificate Image 2">
+                             </div>
+                             <div class="card">
+                              <img src="certificate/g.jpg" alt="Certificate Image 2">
+                                   </div>
+                                   <div class="card">
+                                    <img src="certificate/i.jpg" alt="Certificate Image 2">
+                                         </div>
+                                         </div>
+                                         </section>
 
   <footer>
-    &copy; 2025 Sonam Kendre | Portfolio Website
+    <p>Contact: sonamkendre2000@gmail.com</p>
+    <p>mob No:-8767197540</p>
+    <p>Follow me on <a href="https://github.com/sonamkendre1?tab=repositories" target="_blank">LinkedIn</a> | <a href="https://github.com/sonamkendre" target="_blank">GitHub</a></p>
   </footer>
 
 </body>
 </html>
 
+
+
+
+
+
+
+    
